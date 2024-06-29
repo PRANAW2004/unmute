@@ -1,19 +1,36 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+// import Message from './components/screens/message.jsxsage.jsx'
+import BottomTabs from './components/bottomTabNavigator.jsx';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 export default function App() {
+
+  const Stack = createNativeStackNavigator();
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    // <View>
+      <NavigationContainer>
+        <Stack.Navigator>
+        <Stack.Screen
+          name="BottomTab"
+          component={BottomTabs}
+          options={{headerShown:false}}
+        >
+        </Stack.Screen>
+        </Stack.Navigator>
+      </NavigationContainer>
+    // {/* </View> */}
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    width:'100%',
+    // backgroundColor: '#474EFF',
+    backgroundImage: 'linear-gradient(to bottom,#000,#474EFF)',
     alignItems: 'center',
     justifyContent: 'center',
   },
