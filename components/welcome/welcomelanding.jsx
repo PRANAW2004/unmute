@@ -36,7 +36,7 @@ export default function WelcomeLanding({navigation}){
                     </View>
                 </View>
                 <View style={{marginTop:20,display:'flex',justifyContent:'center',alignItems:'center',width:'100%'}}>
-                    <Pressable style={{backgroundColor:'white',width:'70%',height:40,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:13}}>
+                    <Pressable onPress={() => navigation.navigate("BottomTab") } style={{backgroundColor:'white',width:'70%',height:40,display:'flex',justifyContent:'center',alignItems:'center',borderRadius:13}}>
                         <Text style={{color:'black'}}>Sign up with existing account?</Text>
                     </Pressable>
                 </View>
