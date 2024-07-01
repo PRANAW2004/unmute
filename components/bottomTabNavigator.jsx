@@ -62,7 +62,7 @@ export default function BottomTabs(){
         >
             <Tab.Screen name={homename} component={Home} options={{headerShown: false}} />
             <Tab.Screen name={searchname} component={Search} options={{headerShown: false}} />
-            <Tab.Screen name={createname} component={Create} options={{headerShown: false}} />
+            <Tab.Screen name={createname} component={Create} options={{headerShown: false,tabBarStyle:{display:"none"}}} />
             <Tab.Screen name={messagename} component={Message} options={{headerShown: false}} />
             <Tab.Screen name={profilename} component={Profile} options={{headerShown: false}} />
         </Tab.Navigator>
