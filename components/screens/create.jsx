@@ -80,8 +80,8 @@ export default function Create() {
                         <Pressable>
                             <MaterialCommunityIcons name="play" color="blue" size={30}/>
                         </Pressable>
-                        <View>
-                            <Image source={require("../../assets/Group 71.png")} style={{height:40,width:200}} ></Image>
+                        <View style={{width:'50%'}}>
+                            <Image source={require("../../assets/Group 1926.png")} style={{height:20,width:200}} ></Image>
                         </View>
                         <View style={styles.timeContainer}>
                             {/* <Text>{formatTime(currentPosition)}</Text> */}
