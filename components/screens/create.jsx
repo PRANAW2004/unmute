@@ -4,8 +4,18 @@ import LinearGradient from 'react-native-linear-gradient';
 import { useState } from "react";
 export default function Create() {
 
-    const [currentPosition, setCurrentPosition] = useState(0);
     const [duration, setDuration] = useState(0);
+    const [play,setplay] = useState(true)
+
+    function record(){
+        setplay(play===true?false:true);   
+    }
+
+    if(play === false){
+        setTimeout(() => {
+            setplay(true);
+        },30000)
+    }
 
     return (
         <View style={{ display: "flex", justifyContent: "center", alignItems: "center", width: '100%' }}>
@@ -76,16 +86,16 @@ export default function Create() {
                     <View style={{width:'90%',marginBottom:10}}>
                         <Text style={{color:"white"}}>Your Audio</Text>
                     </View>
-                    <View style={{backgroundColor:"white",borderRadius: 15,height:60,width:'90%',display:"flex",justifyContent:"center",alignItems:'center',flexDirection:'row'}}>
-                        <Pressable>
-                            <MaterialCommunityIcons name="play" color="blue" size={30}/>
+                    <View style={{gap:10,backgroundColor:"white",borderRadius: 15,height:60,width:'90%',display:"flex",justifyContent:"center",alignItems:'center',flexDirection:'row'}}>
+                        <Pressable onPress={record}>
+                            <MaterialCommunityIcons name={play===true?"play":"pause"} color="blue" size={35}/>
                         </Pressable>
-                        <View style={{width:'50%'}}>
-                            <Image source={require("../../assets/Group 1926.png")} style={{height:20,width:200}} ></Image>
+                        <View>
+                            <Image source={play===true?require("../../assets/Group 1926.png"):require("../../assets/gifmaker_me.gif")} style={{height:20,width:250}} ></Image>
                         </View>
                         <View style={styles.timeContainer}>
                             {/* <Text>{formatTime(currentPosition)}</Text> */}
-                            <Text>{formatTime(duration)}</Text>
+                            <Text>{duration}</Text>
                         </View>
                     </View>
                 </View>
@@ -141,6 +151,6 @@ const styles = StyleSheet.create({
     timeContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: 60,
+    // width: 60,
   },
 })
